@@ -2,12 +2,11 @@
 
 Preferences preferences;
 
-Configuration::Configuration(){
-  Configuration(true); 
+void Configuration::setup(boolean readonly){
+  preferences.begin("valkyrie", readonly);
 }
 
-Configuration::Configuration(boolean readonly){
-  preferences.begin("valkyrie", readonly);
+void Configuration::read(){
   ssid = preferences.getString("ssid", String(_SSID));
   password = preferences.getString("password", String(PASSWORD));
   dryboxName = preferences.getString("drybox_name", String(DRYBOX_NAME));
@@ -20,5 +19,3 @@ void Configuration::write(){
   preferences.putString("drybox_name", dryboxName);
   preferences.putString("dwc_name", dwcName);
 }
-
-

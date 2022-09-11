@@ -6,7 +6,7 @@
 #include <WiFiClientSecure.h>
 #include <WiFiMulti.h>
 
-Configuration config(false);
+Configuration config;
 
 WiFiMulti wifiMulti;
 
@@ -44,6 +44,8 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
+  config.setup(false);
+  config.read();
   Serial.println("Writing configuration.");
   config.write();
 
