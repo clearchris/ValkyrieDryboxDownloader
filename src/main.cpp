@@ -5,6 +5,7 @@
 #include <SPIFFS.h>
 #include <WiFiClientSecure.h>
 #include <WiFiMulti.h>
+#include <nvs_flash.h>
 
 Configuration config;
 
@@ -43,6 +44,10 @@ boolean checkOta = true;
 void setup() {
   Serial.begin(115200);
   Serial.println();
+
+  Serial.println("Clearing NVS partition.");
+  nvs_flash_erase();
+  nvs_flash_init();
 
   config.setup(false);
   config.read();
