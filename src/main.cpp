@@ -82,7 +82,8 @@ void setup() {
   }
 
   sota.checkURL = otaUrl;
-  sota.setCertFileSystem(nullptr);
+  //sota.setManifestURL( otaUrl );
+  //sota.setCertFileSystem(nullptr);
 }
 
 void loop() {
