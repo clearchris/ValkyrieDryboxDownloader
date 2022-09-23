@@ -35,8 +35,10 @@ char* test_root_ca= \
 "CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=\n"
 "-----END CERTIFICATE-----\n";
 
-String otaUrl = "https://raw.githubusercontent.com/clearchris/ValkyrieDryboxFirmware/main/valkyrie-drybox-dwc.json";
-esp32FOTA sota("valkyrie-drybox-dwc", 0, false, true);
+String otaBranch = "valkyrie-drybox-dwc-stable";
+String otaUrl = "https://raw.githubusercontent.com/clearchris/ValkyrieDryboxFirmware/main/" + otaBranch + ".json";
+esp32FOTA sota(otaBranch, 0, false, true);
+
 WiFiClientSecure clientForOta;
 
 boolean checkOta = true;
