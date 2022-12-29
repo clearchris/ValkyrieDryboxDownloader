@@ -83,9 +83,9 @@ void setup() {
     return;
   }
 
-  sota.checkURL = otaUrl;
-  //sota.setManifestURL( otaUrl );
-  //sota.setCertFileSystem(nullptr);
+  //sota.checkURL = otaUrl;
+  sota.setManifestURL( otaUrl );
+  sota.setCertFileSystem(nullptr);
 }
 
 void loop() {
